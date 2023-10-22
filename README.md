@@ -1,2 +1,2 @@
-# gptjarvis
+# GPTJarvis
 ChatGPT for personal use
