@@ -2,8 +2,6 @@ from decouple import config
 
 
 class AppConfig:
-    TELEGRAM_URL = "https://api.telegram.org/bot{token}".format(token=config('TELEGRAM_BOT_TOKEN'))
-    WEBHOOK_URL = "https://{host}:{port}{url}".format(host=config('HOST'), port=config('PORT'), url="/bot/webhook")
     URL = "/bot/webhook"
     HOST = config('HOST')
     PORT = config('PORT')
@@ -14,3 +12,7 @@ class AppConfig:
     MYSQL_DATABASE = config('MYSQL_DATABASE')
     CHAT_GPT_API_KEY = config('CHAT_GPT_API_KEY')
     TELEGRAM_BOT_TOKEN = config('TELEGRAM_BOT_TOKEN')
+    TELEGRAM_URL = "https://api.telegram.org/bot{token}".format(token=config('TELEGRAM_BOT_TOKEN'))
+    WEBHOOK_DOMAIN = config('WEBHOOK_DOMAIN')
+    WEBHOOK_URL = config('WEBHOOK_URL')
+    WEBHOOK_URL = "https://{domain}{url}".format(domain=WEBHOOK_DOMAIN, url=WEBHOOK_URL)

@@ -97,8 +97,10 @@ def set_webhook():
                                                              webhook_url=AppConfig.WEBHOOK_URL))
 
     if s:
+        print("Successfully set up webhook")
         return "Success"
     else:
+        print("Couldn't set up webhook")
         return "Fail"
 
 
